@@ -13,7 +13,6 @@ body {
 
 .app__container {
   width: 100%;
-  max-width: 32rem;
   padding: 1rem;
 }
 
