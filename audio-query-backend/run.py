@@ -1,6 +1,7 @@
 from app import create_app
 import logging
 import os
+from flask_cors import CORS
 
 logging.basicConfig(
     level=logging.INFO,
@@ -10,7 +11,7 @@ logging.basicConfig(
 
 if __name__ == "__main__":
     app = create_app()
-
+    CORS(app)
     BASE_DIR = app.config.get('BASE_DIR', 'app')
     UPLOAD_FOLDER = app.config.get('UPLOAD_FOLDER', 'uploads')
     os.makedirs(os.path.join(BASE_DIR, UPLOAD_FOLDER),  exist_ok=True)
