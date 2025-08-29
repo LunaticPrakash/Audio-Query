@@ -402,7 +402,8 @@ export default function App() {
         width:'100em !important'
       }}>
         <div style={{ fontSize: '0.875rem', color: '#64748b', marginTop: '0.25rem' }}>
-          Technologies Used: Python(Flask, PyDub, SQLAlchemy), ReactJs, SQLite, and OpenAI-Whisper
+          Technologies Used: Python(Flask, PyDub, SQLAlchemy), ReactJs, SQLite, and OpenAI-Whisper<br/><br/>
+          Note: Supports only English language audio files. Other languages to be added in releases
         </div>
         <div style={{ marginTop: '1rem', fontSize: '1.2rem', fontWeight: 'bold', color: '#1e293b' }}>
           Developer: Prakash Gupta
