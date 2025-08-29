@@ -16,4 +16,4 @@ if __name__ == "__main__":
     os.makedirs(os.path.join(BASE_DIR, UPLOAD_FOLDER),  exist_ok=True)
 
     logging.info("Flask app starting on port 5000")
-    app.run(port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000)
