@@ -1,0 +1,33 @@
+# Node.js and Vite ignores
+# -------------------------
+**/**node_modules
+**/**dist
+.env
+.env.local
+.vite/
+
+# Python and Flask ignores
+# -------------------------
+**/**__pycache__/
+*.pyc
+**/**venv
+**/**.venv
+.env
+.flaskenv
+
+# Database file
+# -------------------------
+*.db
+*.sqlite
+*.sqlite3
+**/**migrations/
+
+# Operating system and editor ignores
+# -----------------------------------
+.DS_Store
+.vscode/
+npm-debug.log*
+yarn-debug.log*
+
+
+**/**uploads/
