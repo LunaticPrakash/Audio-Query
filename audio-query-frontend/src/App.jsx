@@ -40,13 +40,16 @@ export default function App() {
     { size: "large", speed: "(Speed 1x)" },
   ];
 
+
+  const BASE_URL = 'https://audio-query-backend.onrender.com';
+
   useEffect(() => {
     fetchAllRecordings();
   }, []);
 
   const fetchAllRecordings = async () => {
     try {
-      const response = await fetch("http://localhost:5000/list-all-recordings");
+      const response = await fetch(`${BASE_URL}/list-all-recordings`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -83,7 +86,7 @@ export default function App() {
 
     try {
       setProcessingMessage("Uploading and processing files...");
-      const response = await fetch("http://localhost:5000/transcribe-audio", {
+      const response = await fetch(`${BASE_URL}/transcribe-audio`, {
         method: "POST",
         body: formData,
       });
@@ -122,11 +125,7 @@ export default function App() {
       setIsProcessing(true);
       setProcessingMessage("Searching...");
       setSearchError(null);
-      const response = await fetch(
-        `http://localhost:5000/search-audio?q=${encodeURIComponent(
-          searchQuery
-        )}`
-      );
+      const response = await fetch("BASE_URL" + "/search-audio?q=" + `${encodeURIComponent(searchQuery)}`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -152,10 +151,7 @@ export default function App() {
         setIsProcessing(true);
         setProcessingMessage("Loading audio...");
         const response = await fetch(
-          `http://localhost:5000/uploads/${
-            recording.rec_id + "_" + recording.file_name
-          }`
-        );
+          `${BASE_URL}/uploads/${recording.rec_id + "_" + recording.file_name}`);
         if (!response.ok) {
           throw new Error("Failed to fetch audio file.");
         }
@@ -212,7 +208,7 @@ export default function App() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/delete-recording/${deletingRecordingId}`,
+        `${BASE_URL}/delete-recording/${deletingRecordingId}`,
         {
           method: "DELETE",
         }
