@@ -25,7 +25,8 @@ export default function App() {
   const [nameText, setNameText] = useState(null);
   const [modelName, setModelName] = useState(null);
   const [modelSize, setModelSize] = useState(null);
-  const [selectedModelSize, setSelectedModelSize] = useState("base");
+  const [selectedModelSize, setSelectedModelSize] = useState("tiny");
+  const [selectedLanguageCode, setselectedLanguageCode] = useState("en");
   const [deleteError, setDeleteError] = useState(null);
   const [showDeleteConfirmPopup, setShowDeleteConfirmPopup] = useState(false);
   const [deletingRecordingId, setDeletingRecordingId] = useState(null);
@@ -40,6 +41,16 @@ export default function App() {
     { size: "small", speed: "(Speed ~4x)" },
     { size: "medium", speed: "(Speed ~2x)" },
     { size: "large", speed: "(Speed 1x)" },
+  ];
+
+  const languageOptions = [
+    { "lang": "English", "code": "en" },
+    { "lang": "Hindi", "code": "hi" },
+    { "lang": "Telugu", "code": "te" },
+    { "lang": "Tamil", "code": "ta" },
+    { "lang": "Japanese", "code": "ja" },
+    { "lang": "Spanish", "code": "es" },
+    { "lang": "French", "code": "fr" },
   ];
 
   const BASE_URL = "https://6dba75a56915.ngrok-free.app";
@@ -84,6 +95,7 @@ export default function App() {
       formData.append(`files`, file, file.name);
     });
     formData.append("model_size", selectedModelSize);
+    formData.append("language", selectedLanguageCode);
 
     try {
       setProcessingMessage("Uploading and processing files...");
@@ -251,13 +263,6 @@ export default function App() {
         <div className="app__container__normal_text">
           Upload new recordings or search existing ones.
         </div>
-        <div style={{
-            fontSize: "0.875rem",
-            color: "#64748b",
-            marginTop: "1rem",
-          }}>
-          Note: Supports only English language audio files.
-        </div>
         <div className="app__section_divider"></div>
         <div className="app__container__h3">Upload new recording(s)</div>
         <div className="input-group">
@@ -301,6 +306,24 @@ export default function App() {
             {modelOptions.map((option) => (
               <option key={option.size} value={option.size}>
                 {`${option.size} ${option.speed}`}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="select-container">
+          <label className="select-label" htmlFor="audio-language">
+            Select Audio Language:
+          </label>
+          <select
+            id="audio-language"
+            className="input-field"
+            value={selectedLanguageCode}
+            onChange={(e) => setSelectedLanguageCode(e.target.value)}
+            disabled={isProcessing}
+          >
+            {languageOptions.map((option) => (
+              <option key={option.code} value={option.code}>
+                {option.lang}
               </option>
             ))}
           </select>
