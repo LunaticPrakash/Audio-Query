@@ -108,7 +108,7 @@ def transcribe_audio_with_whisper(audio_file_path: str, model: whisper, language
 def search_recordings(query: str):
     query_pattern = f"%{query}%"
     recordings = Recording.query.filter(
-        Recording.text_content.like(query_pattern)).limit(3).all()
+        Recording.text_content.like(query_pattern)).all()
     results = [
         {
             "rec_id": rec.rec_id,
