@@ -40,8 +40,7 @@ export default function App() {
     { size: "large", speed: "(Speed 1x)" },
   ];
 
-
-  const BASE_URL = 'https://audio-query-backend.onrender.com';
+  const BASE_URL = "https://6dba75a56915.ngrok-free.app";
 
   useEffect(() => {
     fetchAllRecordings();
@@ -125,7 +124,9 @@ export default function App() {
       setIsProcessing(true);
       setProcessingMessage("Searching...");
       setSearchError(null);
-      const response = await fetch("BASE_URL" + "/search-audio?q=" + `${encodeURIComponent(searchQuery)}`);
+      const response = await fetch(
+        "BASE_URL" + "/search-audio?q=" + `${encodeURIComponent(searchQuery)}`
+      );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -151,7 +152,8 @@ export default function App() {
         setIsProcessing(true);
         setProcessingMessage("Loading audio...");
         const response = await fetch(
-          `${BASE_URL}/uploads/${recording.rec_id + "_" + recording.file_name}`);
+          `${BASE_URL}/uploads/${recording.rec_id + "_" + recording.file_name}`
+        );
         if (!response.ok) {
           throw new Error("Failed to fetch audio file.");
         }
@@ -245,6 +247,13 @@ export default function App() {
         <div className="app__container__normal_text">
           Upload new recordings or search existing ones.
         </div>
+        <div style={{
+            fontSize: "0.875rem",
+            color: "#64748b",
+            marginTop: "1rem",
+          }}>
+          Note: Supports only English language audio files.
+        </div>
         <div className="app__section_divider"></div>
         <div className="app__container__h3">Upload new recording(s)</div>
         <div className="input-group">
@@ -276,8 +285,8 @@ export default function App() {
             Select Model Size:
           </label>
           <p className="help-text">
-              Model with high speed will have low accuracy.
-            </p>
+            Model with high speed will have low accuracy.
+          </p>
           <select
             id="model-size"
             className="input-field"
@@ -387,33 +396,48 @@ export default function App() {
           <div className="loading-message">{processingMessage}</div>
         </div>
       )}
-      <div style={{
-        padding: '1rem',
-        marginTop: '3rem',
-        borderRadius: '0 0 1.5rem 1.5rem',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        textAlign: 'center',
-        width:'100em !important'
-      }}>
-        <div style={{ fontSize: '0.875rem', color: '#64748b', marginTop: '0.25rem' }}>
-          Technologies Used: Python(Flask, PyDub, SQLAlchemy), ReactJs, SQLite, and OpenAI-Whisper<br/><br/>
-          Note: Supports only English language audio files. Other languages to be added in releases
+      <div
+        style={{
+          padding: "1rem",
+          marginTop: "3rem",
+          borderRadius: "0 0 1.5rem 1.5rem",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          textAlign: "center",
+          width:'100em !important'
+        }}
+      >
+        <div
+          style={{
+            fontSize: "0.875rem",
+            color: "#64748b",
+            marginTop: "0.25rem",
+          }}
+        >
+          Technologies Used: Python(Flask, PyDub, SQLAlchemy), ReactJs, SQLite,
+          and OpenAI-Whisper
         </div>
-        <div style={{ marginTop: '1rem', fontSize: '1.2rem', fontWeight: 'bold', color: '#1e293b' }}>
+        <div
+          style={{
+            marginTop: "1rem",
+            fontSize: "1.2rem",
+            fontWeight: "bold",
+            color: "#1e293b",
+          }}
+        >
           Developer: Prakash Gupta
         </div>
-        <div style={{ marginTop: '0.25rem', display: 'flex', gap: '1rem' }}>
+        <div style={{ marginTop: "0.25rem", display: "flex", gap: "1rem" }}>
           <a
             href="https://www.linkedin.com/in/prakashgupta-/"
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              textDecoration: 'none',
-              color: '#3b82f6',
-              fontWeight: 'bold',
-              transition: 'color 0.2s'
+              textDecoration: "none",
+              color: "#3b82f6",
+              fontWeight: "bold",
+              transition: "color 0.2s",
             }}
           >
             LinkedIn
@@ -423,10 +447,10 @@ export default function App() {
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              textDecoration: 'none',
-              color: '#3b82f6',
-              fontWeight: 'bold',
-              transition: 'color 0.2s'
+              textDecoration: "none",
+              color: "#3b82f6",
+              fontWeight: "bold",
+              transition: "color 0.2s",
             }}
           >
             GitHub
