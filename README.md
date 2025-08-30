@@ -1,6 +1,6 @@
 # AudioQuery
 
-A full-stack application that allows users to **upload audio files** (like call recordings, meetings, or lectures) and **search for keywords or phrases** within them. The matching audio files will be displayed to user which he can directly listen or read the transcribed text. 
+A full-stack application that allows users to **upload audio files** (like call recordings, meetings, or lectures) and **search for keywords or phrases** within them. The matching audio files will be displayed to user which he can directly listen or read the transcribed text with highlighted matching phrase. 
 
 The app automatically transcribes audio into text using **OpenAI Whisper** and stores it into database for quick, future searches to avoid duplicate processing.
 
@@ -8,7 +8,7 @@ The app automatically transcribes audio into text using **OpenAI Whisper** and s
 
 ## Screenshots:
 **i. Home Page** <br/> <br/>
-<img width="270" height="600" alt="Image" src="https://github.com/user-attachments/assets/c786a93f-4c22-444b-b827-9ba085819c31" />
+<img width="270" height="600" alt="Image" src="https://github.com/user-attachments/assets/a94ed338-7dc3-4b0f-a314-ae6403050e16" />
 
 **ii. Model Selection** <br/> <br/>
 <img width="270" height="600" alt="Image" src="https://github.com/user-attachments/assets/8ad06d96-dab5-4c5a-b8f3-b16eaf0858eb" />
@@ -17,10 +17,10 @@ The app automatically transcribes audio into text using **OpenAI Whisper** and s
 <img width="270" height="600" alt="Image" src="https://github.com/user-attachments/assets/78cc2fe0-af8e-4e9d-ae39-859449a74b85" />
 
 **iv. All uploaded audio files and matching searched audio** <br/> <br/>
-<img width="270" height="600" alt="Image" src="https://github.com/user-attachments/assets/e6b76caf-6dc5-4402-9650-ac520a6b84f7" />
+<img width="270" height="600" alt="Image" src="https://github.com/user-attachments/assets/50d0ed9b-905a-4c8c-a2f8-259673ddca9c" />
 
-**v. Popup View for details** <br/> <br/>
-<img width="270" height="600" alt="Image" src="https://github.com/user-attachments/assets/d31c37da-7029-4bd8-9fe4-553f61e2a44f" />
+**v. Popup View for details** (Transcription is not very accurate as used the base model)<br/> <br/>
+<img width="270" height="600" alt="Image" src="https://github.com/user-attachments/assets/eef55506-e0b3-4157-9d5e-81eb51ce6bb4" />
 
 ---
 
@@ -41,6 +41,7 @@ The app automatically transcribes audio into text using **OpenAI Whisper** and s
 - **Duplicate check** – Avoids reprocessing if the same file already exists.  
 - **Preprocessing** – Ensures audio is standardized before transcription (mono, 16kHz).
 - **Multi Language Support** – Provided support for multiple languages like English, Hindi, Telugu, French, etc.  
+- **Highlighted Phrase/Keyword** – The matching keywords/phrases will be highlighted in the text transcription for easy finding.
 
 ---
 
