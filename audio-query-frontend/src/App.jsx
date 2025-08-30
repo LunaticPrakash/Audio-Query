@@ -222,7 +222,7 @@ export default function App() {
 
       const result = await response.json();
       console.log(result.message);
-      await fetchAllRecordings(); // Refresh the list after deletion
+      await fetchAllRecordings();
     } catch (e) {
       console.error("Deletion failed:", e);
       setDeleteError("An error occurred during deletion. Please try again.");
