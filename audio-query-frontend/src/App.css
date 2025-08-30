@@ -201,7 +201,6 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 250px;
-  display: block;
 }
 
 .transcription-text {
