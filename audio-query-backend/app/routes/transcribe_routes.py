@@ -8,6 +8,11 @@ def register_transcribe_routes(app):
     BASE_DIR = app.config.get('BASE_DIR', 'app')
     UPLOAD_FOLDER = app.config.get('UPLOAD_FOLDER', 'uploads')
 
+    @app.route(rule="/status", methods=["GET"])
+    def status():
+        logging.info("Backend is live")
+        return {"message":"Live"}, 200
+
     @app.route(rule="/transcribe-audio", methods=["POST"])
     def transcribe_audio():
         files = request.files.getlist('files')

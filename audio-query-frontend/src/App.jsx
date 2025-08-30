@@ -31,6 +31,7 @@ export default function App() {
   const [showDeleteConfirmPopup, setShowDeleteConfirmPopup] = useState(false);
   const [deletingRecordingId, setDeletingRecordingId] = useState(null);
   const [deletingRecordingName, setDeletingRecordingName] = useState(null);
+  const [isBackendLive, setisBackendLive] = useState(true);
   const fileInputRef = useRef(null);
   const audioRef = useRef(null);
 
@@ -58,6 +59,16 @@ export default function App() {
   useEffect(() => {
     fetchAllRecordings();
   }, []);
+
+
+  const isBackendRunning = async () => {
+    try{
+      const response = await fetch(`${BASE_URL}/status`);
+    }
+    catch{
+      setisBackendLive(false);
+    }
+  }
 
   const fetchAllRecordings = async () => {
     try {
@@ -264,6 +275,7 @@ export default function App() {
   return (
     <div className="app__container">
       <div className="app__card">
+      {!isBackendLive && <div className="error-text">Backend Server is currently off. Try later!</div>}
         <div className="app__container__h2">Audio Query</div>
         <p className="help-text" style={{marginTop:"0.8rem"}}>
           Tired of replaying multiple call recordings or audios to search for a phrase? Not anymore, Try AudioQuery!
