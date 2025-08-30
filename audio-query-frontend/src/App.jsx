@@ -260,6 +260,9 @@ export default function App() {
     <div className="app__container">
       <div className="app__card">
         <div className="app__container__h2">Audio Query</div>
+        <p className="help-text" style={{marginTop:"0.8rem"}}>
+          Tired of replaying multiple call recordings or audios to search for a phrase? Not anymore!
+        </p>
         <div className="app__container__normal_text">
           Upload new recordings or search existing ones.
         </div>
@@ -385,6 +388,7 @@ export default function App() {
             showPopup={showPopup}
             onDeleteClick={handleDeleteClick}
             showDeleteConfirmPopup={showDeleteConfirmPopup}
+            searchQuery={searchQuery}
           />
         ) : (
           isSearched && (
@@ -404,6 +408,7 @@ export default function App() {
           error={allRecordingError}
           onDeleteClick={handleDeleteClick}
           showDeleteConfirmPopup={showDeleteConfirmPopup}
+          searchQuery={null}
         />
       </div>
       {popupText && (
@@ -413,6 +418,7 @@ export default function App() {
           modelName={modelName}
           modelSize={modelSize}
           onClose={closePopup}
+          searchQuery={searchQuery}
         />
       )}
       {showDeleteConfirmPopup && (

@@ -379,3 +379,8 @@ body {
   font-weight: 600;
   color: #4b5563;
 }
+
+.highlighted {
+  background-color: yellow;
+  font-weight: bold;
+}

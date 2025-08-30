@@ -1,4 +1,26 @@
+import React from "react";
 import { PlayIcon, PauseIcon, TrashIcon } from "@heroicons/react/24/solid";
+
+const HighlightedText = ({ text, highlight }) => {
+  if (!highlight) {
+    return <span>{text}</span>;
+  }
+
+  const parts = text.split(new RegExp(`(${highlight})`, "gi"));
+  return (
+    <span>
+      {parts.map((part, i) => (
+        <React.Fragment key={i}>
+          {part.toLowerCase() === highlight.toLowerCase() ? (
+            <span className="highlighted">{part}</span>
+          ) : (
+            part
+          )}
+        </React.Fragment>
+      ))}
+    </span>
+  );
+};
 
 const RecordingsTable = ({
   title,
@@ -9,6 +31,7 @@ const RecordingsTable = ({
   error,
   onDeleteClick,
   showDeleteConfirmPopup,
+  searchQuery,
 }) => (
   <div className="list-section">
     <div className="app__container__h3">{title}</div>
@@ -30,11 +53,22 @@ const RecordingsTable = ({
                 key={recording.rec_id}
                 onClick={() =>
                   !showDeleteConfirmPopup &&
-                  showPopup(recording.file_name, recording.text_content, recording.model_name, recording.model_size)
+                  showPopup(
+                    recording.file_name,
+                    recording.text_content,
+                    recording.model_name,
+                    recording.model_size
+                  )
                 }
               >
                 <td className="filename-text">{recording.file_name}</td>
-                <td className="transcription-text">{recording.text_content}</td>
+                <td className="transcription-text">
+                  {searchQuery ? (
+                    <HighlightedText text={recording.text_content} highlight={searchQuery} />
+                  ) : (
+                    recording.text_content
+                  )}
+                </td>
                 <td className="transcription-text">{`${recording.model_name}-${recording.model_size}`}</td>
                 <td className="action-column">
                   <button
