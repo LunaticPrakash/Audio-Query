@@ -261,7 +261,7 @@ export default function App() {
       <div className="app__card">
         <div className="app__container__h2">Audio Query</div>
         <p className="help-text" style={{marginTop:"0.8rem"}}>
-          Tired of replaying multiple call recordings or audios to search for a phrase? Not anymore!
+          Tired of replaying multiple call recordings or audios to search for a phrase? Not anymore, Try AudioQuery!
         </p>
         <div className="app__container__normal_text">
           Upload new recordings or search existing ones.
