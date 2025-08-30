@@ -23,6 +23,8 @@ export default function App() {
   const [playingAudio, setPlayingAudio] = useState(null);
   const [popupText, setPopupText] = useState(null);
   const [nameText, setNameText] = useState(null);
+  const [modelName, setModelName] = useState(null);
+  const [modelSize, setModelSize] = useState(null);
   const [selectedModelSize, setSelectedModelSize] = useState("base");
   const [deleteError, setDeleteError] = useState(null);
   const [showDeleteConfirmPopup, setShowDeleteConfirmPopup] = useState(false);
@@ -185,9 +187,11 @@ export default function App() {
     }
   };
 
-  const showPopup = (name, text) => {
+  const showPopup = (name, text, modelName, modelSize) => {
     setNameText(name);
     setPopupText(text);
+    setModelName(modelName);
+    setModelSize(modelSize);
   };
 
   const closePopup = () => {
@@ -380,6 +384,8 @@ export default function App() {
         <TranscriptionPopup
           nameText={nameText}
           text={popupText}
+          modelName={modelName}
+          modelSize={modelSize}
           onClose={closePopup}
         />
       )}

@@ -263,13 +263,16 @@ body {
   flex-direction: column;
 }
 
-.popup-header {
+.popup-header{
+  border-bottom: 1px solid #c0c1c3;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.popup-header-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #e5e7eb;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
 }
 
 .popup-title {
@@ -277,6 +280,13 @@ body {
   font-weight: 600;
   color: #1f2937;
   word-break: break-all;
+}
+
+.model-text{
+  font-size: 1.1rem;
+  color: #333c4a;
+  margin-top: 0.5rem;
+  display: block;
 }
 
 .popup-close-btn {

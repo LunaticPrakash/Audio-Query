@@ -30,7 +30,7 @@ const RecordingsTable = ({
                 key={recording.rec_id}
                 onClick={() =>
                   !showDeleteConfirmPopup &&
-                  showPopup(recording.file_name, recording.text_content)
+                  showPopup(recording.file_name, recording.text_content, recording.model_name, recording.model_size)
                 }
               >
                 <td className="filename-text">{recording.file_name}</td>
