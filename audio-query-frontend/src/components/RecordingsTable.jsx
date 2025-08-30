@@ -17,8 +17,8 @@ const RecordingsTable = ({
         <table className="results-table">
           <thead>
             <tr>
-              <th>File Name</th>
-              <th>Transcription</th>
+              <th>Name</th>
+              <th>Text</th>
               <th>Model</th>
               <th className="action-column">Play</th>
               <th className="action-column">Delete</th>
