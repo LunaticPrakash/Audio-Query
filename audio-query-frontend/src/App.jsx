@@ -131,6 +131,8 @@ export default function App() {
   };
 
   const handleSearch = async () => {
+    setUploadError(null);
+    setDeleteError(null)
     if (!searchQuery) {
       setSearchResults([]);
       setSearchError("No text provided for search.");
