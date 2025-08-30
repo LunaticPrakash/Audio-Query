@@ -8,16 +8,19 @@ The app automatically transcribes audio into text using **OpenAI Whisper** and s
 
 ## Screenshots:
 **i. Home Page** <br/> <br/>
-<img width="270" height="600" alt="Image" src="https://github.com/user-attachments/assets/bb2eda49-e1e4-4fd2-8037-0ee941f46396" />
+<img width="270" height="600" alt="Image" src="https://github.com/user-attachments/assets/c786a93f-4c22-444b-b827-9ba085819c31" />
 
 **ii. Model Selection** <br/> <br/>
-<img width="270" height="600" alt="Image" src="https://github.com/user-attachments/assets/16d9e5e6-007d-4e85-acda-4423aa9a643b" />
+<img width="270" height="600" alt="Image" src="https://github.com/user-attachments/assets/8ad06d96-dab5-4c5a-b8f3-b16eaf0858eb" />
 
-**iii. All Audio** <br/> <br/>
-<img width="270" height="600" alt="Image" src="https://github.com/user-attachments/assets/54f1af6f-cf9b-42dd-b2d1-c611fc63fe12" />
+**iii. Language Selection** <br/> <br/>
+<img width="270" height="600" alt="Image" src="https://github.com/user-attachments/assets/78cc2fe0-af8e-4e9d-ae39-859449a74b85" />
 
-**iv. Search Audio** <br/> <br/>
-<img width="270" height="600" alt="Image" src="https://github.com/user-attachments/assets/232f855b-3d5d-4f7e-9120-16df3084220e" />
+**iv. All uploaded audio files and matching searched audio** <br/> <br/>
+<img width="270" height="600" alt="Image" src="https://github.com/user-attachments/assets/e6b76caf-6dc5-4402-9650-ac520a6b84f7" />
+
+**v. Popup View for details** <br/> <br/>
+<img width="270" height="600" alt="Image" src="https://github.com/user-attachments/assets/d31c37da-7029-4bd8-9fe4-553f61e2a44f" />
 
 ---
 
@@ -36,7 +39,8 @@ The app automatically transcribes audio into text using **OpenAI Whisper** and s
 - **Audio playback** – Play back uploaded recordings directly in the browser.  
 - **Manage recordings** – View all recordings and delete unwanted ones.  
 - **Duplicate check** – Avoids reprocessing if the same file already exists.  
-- **Preprocessing** – Ensures audio is standardized before transcription (mono, 16kHz).  
+- **Preprocessing** – Ensures audio is standardized before transcription (mono, 16kHz).
+- **Multi Language Support** – Provided support for multiple languages like English, Hindi, Telugu, French, etc.  
 
 ---
 
