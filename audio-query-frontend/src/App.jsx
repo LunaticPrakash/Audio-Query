@@ -26,7 +26,7 @@ export default function App() {
   const [modelName, setModelName] = useState(null);
   const [modelSize, setModelSize] = useState(null);
   const [selectedModelSize, setSelectedModelSize] = useState("tiny");
-  const [selectedLanguageCode, setselectedLanguageCode] = useState("en");
+  const [selectedLanguageCode, setSelectedLanguageCode] = useState("en");
   const [deleteError, setDeleteError] = useState(null);
   const [showDeleteConfirmPopup, setShowDeleteConfirmPopup] = useState(false);
   const [deletingRecordingId, setDeletingRecordingId] = useState(null);

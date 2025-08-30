@@ -94,7 +94,7 @@ def upsert_recording(data: list):
 
 
 def transcribe_audio_with_whisper(audio_file_path: str, model: whisper, language: str, app):
-    logging.info(f"Transcription started for {audio_file_path}")
+    logging.info(f"Transcription started for {audio_file_path}, language: {language}")
     result = model.transcribe(audio_file_path, language=language)
     logging.info(f"Transcription completed successfully")
     return result["text"]
