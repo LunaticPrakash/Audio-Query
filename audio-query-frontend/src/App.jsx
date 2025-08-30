@@ -57,6 +57,7 @@ export default function App() {
   const BASE_URL = "https://6dba75a56915.ngrok-free.app";
 
   useEffect(() => {
+    isBackendRunning();
     fetchAllRecordings();
   }, []);
 
@@ -64,6 +65,9 @@ export default function App() {
   const isBackendRunning = async () => {
     try{
       const response = await fetch(`${BASE_URL}/status`);
+      console.log(response);
+      if (!response.ok)
+        setisBackendLive(false);
     }
     catch{
       setisBackendLive(false);
