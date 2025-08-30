@@ -87,6 +87,9 @@ export default function App() {
     }
 
     setIsProcessing(true);
+    setSearchQuery("");
+    setSearchError(null)
+    setDeleteError(null)
     setUploadError(null);
     setTranscriptionResult(null);
 
