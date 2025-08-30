@@ -314,6 +314,9 @@ export default function App() {
           <label className="select-label" htmlFor="audio-language">
             Select Audio Language:
           </label>
+          <p className="help-text">
+            Languages other than English would have lower accuracy.
+          </p>
           <select
             id="audio-language"
             className="input-field"
