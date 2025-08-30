@@ -125,7 +125,7 @@ export default function App() {
       setProcessingMessage("Searching...");
       setSearchError(null);
       const response = await fetch(
-        "BASE_URL" + "/search-audio?q=" + `${encodeURIComponent(searchQuery)}`
+        BASE_URL + "/search-audio?q=" + `${encodeURIComponent(searchQuery)}`
       );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
