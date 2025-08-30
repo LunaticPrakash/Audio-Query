@@ -276,6 +276,7 @@ body {
   font-size: 1.25rem;
   font-weight: 600;
   color: #1f2937;
+  word-break: break-all;
 }
 
 .popup-close-btn {
