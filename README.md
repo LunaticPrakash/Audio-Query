@@ -18,6 +18,7 @@ The app automatically transcribes audio into text using **OpenAI Whisper** and s
 
 **iv. Search Audio** <br/> <br/>
 <img width="270" height="600" alt="Image" src="https://github.com/user-attachments/assets/232f855b-3d5d-4f7e-9120-16df3084220e" />
+
 ---
 
 ## Technologies Used:
