@@ -1,6 +1,6 @@
 # AudioQuery
 
-A full-stack application that allows users to **upload audio files** (like call recordings, meetings, or lectures) and **search for keywords or phrases** within them.The matching audio files will be displayed to user which he can directly listen or read the transcribed text. 
+A full-stack application that allows users to **upload audio files** (like call recordings, meetings, or lectures) and **search for keywords or phrases** within them. The matching audio files will be displayed to user which he can directly listen or read the transcribed text. 
 
 The app automatically transcribes audio into text using **OpenAI Whisper** and stores it into database for quick, future searches to avoid duplicate processing.
 
