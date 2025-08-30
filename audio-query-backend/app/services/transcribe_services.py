@@ -21,9 +21,6 @@ def transcribe_audio_service(audio_files: list, model_name: str, model_size: str
             processed_file_path = None
             existing_rec = Recording.query.filter_by(
                 rec_id=source_file_hash).first()
-            logging.info(existing_rec)
-            logging.info(model_name)
-            logging.info(model_size)
             if existing_rec and existing_rec.model_name == model_name and existing_rec.model_size == model_size:
                 logging.info(
                     f"Transcription for file '{source_filename_with_ext}' with model '{model_name}-{model_size}' already exists."
@@ -79,10 +76,8 @@ def upsert_recording(data: list):
     for d in data:
         existing_rec = d.get('existing_rec')        
         if existing_rec:
-            logging.info(f"upsert_recording > if exi")
             records_to_return['existing_recording'].append(existing_rec.to_dict())
         else:
-            logging.info(f"upsert_recording > else exi")
             new_recording = Recording(
                 d.get('hash'),
                 d.get('name'),
