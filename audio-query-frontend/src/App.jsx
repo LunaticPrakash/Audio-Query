@@ -56,6 +56,8 @@ export default function App() {
 
   const BASE_URL = "https://6dba75a56915.ngrok-free.app";
 
+  setInterval(isBackendLive, 5000);
+
   useEffect(() => {
     isBackendRunning();
     fetchAllRecordings();
