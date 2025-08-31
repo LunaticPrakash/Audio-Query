@@ -56,25 +56,29 @@ export default function App() {
 
   const BASE_URL = "https://6dba75a56915.ngrok-free.app";
 
-  setInterval(isBackendRunning, 5000);
-
-  useEffect(() => {
-    isBackendRunning();
-    fetchAllRecordings();
-  }, []);
-
-
-  const isBackendRunning = async () => {
-    try{
+  const checkBackendStatus = async () => {
+    try {
       const response = await fetch(`${BASE_URL}/status`);
-      console.log(response);
-      if (!response.ok)
+      if (response.ok) {
+        setisBackendLive(true);
+      } else {
         setisBackendLive(false);
-    }
-    catch{
+      }
+    } catch (error) {
       setisBackendLive(false);
     }
-  }
+  };
+
+  useEffect(() => {
+    checkBackendStatus();
+    fetchAllRecordings();
+
+    const intervalId = setInterval(() => {
+      checkBackendStatus();
+    }, 5000);
+
+    return () => clearInterval(intervalId);
+  }, []); 
 
   const fetchAllRecordings = async () => {
     try {
