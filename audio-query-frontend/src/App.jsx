@@ -285,7 +285,7 @@ export default function App() {
   return (
     <div className="app__container">
       <div className="app__card">
-      {!isBackendLive && <div className="error-text">Backend Server is currently off. Try later!</div>}
+      {!isBackendLive && <div className="error-text">Backend Server is currently off. Try later! I have hosted the Flask backend code on my own laptop and hence will not be available 24*7.</div>}
         <div className="app__container__h2">Audio Query</div>
         <p className="help-text" style={{marginTop:"0.8rem"}}>
           Tired of replaying multiple call recordings or audios to search for a phrase? Not anymore, Try AudioQuery!
