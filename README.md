@@ -5,7 +5,11 @@ A full-stack application that allows users to **upload audio files** (like call 
 The app automatically transcribes audio into text using **OpenAI Whisper** and stores it into database for quick, future searches to avoid duplicate processing.
 
 ---
+## Status:
 
+Deployed at: <a href="https://audio-query-frontend.onrender.com/">Audio Query</a>
+
+---
 ## Screenshots:
 **i. Home Page** <br/> <br/>
 <img width="270" height="600" alt="Image" src="https://github.com/user-attachments/assets/a94ed338-7dc3-4b0f-a314-ae6403050e16" />
