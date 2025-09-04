@@ -54,7 +54,7 @@ export default function App() {
     { "lang": "French", "code": "fr" },
   ];
 
-  const BASE_URL = "https://6dba75a56915.ngrok-free.app";
+  const BASE_URL = "https://61756944feb1.ngrok-free.app";
 
   const checkBackendStatus = async () => {
     try {
