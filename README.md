@@ -5,7 +5,7 @@ A full-stack application that allows users to **upload audio files** (like call 
 The app automatically transcribes audio into text using **OpenAI Whisper** and stores it into database for quick, future searches to avoid duplicate processing.
 
 ## Reason for building ##
-A colleague of mine started to get around 30-35 calls per day from recruiters and with time it became challenging to identify which call number belongs to which company's recruiter after some days. So, created this Audio Query website that helps to quickly search with a given phrase/keyword, and it'll display the recordings that have those phrases in them, plus user can instantly read the text version of the call instead of listening to it.
+A colleague of mine started to get around 30-35 calls per day from recruiters and with time it became challenging to identify which call number belongs to which company's recruiter after some days. So, created this Audio Query website that allows her to upload many call recording files at once and it get transcribed into the text form. Post that she can use the provided search feature to look for given phrase/keyword, and it'll display the recordings that have those phrases in them, plus user can instantly read the text version of that recoeding instead of listening to it. 
 
 ---
 ## Status:
