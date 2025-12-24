@@ -495,7 +495,7 @@ export default function App() {
         </div>
         <div style={{ marginTop: "0.25rem", display: "flex", gap: "1rem" }}>
           <a
-            href="https://www.linkedin.com/in/prakashgupta-/"
+            href="https://www.linkedin.com/in/prakash-gupta-/"
             target="_blank"
             rel="noopener noreferrer"
             style={{
